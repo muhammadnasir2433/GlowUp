@@ -1,72 +1,77 @@
-import { Instagram } from 'lucide-react'
+'use client'
+
+import { Instagram, Heart, MessageCircle } from 'lucide-react'
 
 const posts = [
-  { id: 1, color: 'bg-rose-300', likes: 234, comments: 12 },
-  { id: 2, color: 'bg-gold-300', likes: 189, comments: 8 },
-  { id: 3, color: 'bg-blush-300', likes: 312, comments: 15 },
-  { id: 4, color: 'bg-purple-300', likes: 267, comments: 10 },
-  { id: 5, color: 'bg-blue-300', likes: 198, comments: 7 },
-  { id: 6, color: 'bg-green-300', likes: 245, comments: 11 },
+  { id: 1, color: 'bg-gradient-to-br from-pink-400 to-pink-600', likes: 234, comments: 12 },
+  { id: 2, color: 'bg-gradient-to-br from-purple-400 to-purple-600', likes: 189, comments: 8 },
+  { id: 3, color: 'bg-gradient-to-br from-blue-400 to-blue-600', likes: 312, comments: 15 },
+  { id: 4, color: 'bg-gradient-to-br from-green-400 to-green-600', likes: 267, comments: 10 },
+  { id: 5, color: 'bg-gradient-to-br from-orange-400 to-orange-600', likes: 198, comments: 7 },
+  { id: 6, color: 'bg-gradient-to-br from-teal-400 to-teal-600', likes: 245, comments: 11 },
+  { id: 7, color: 'bg-gradient-to-br from-rose-400 to-rose-600', likes: 289, comments: 14 },
+  { id: 8, color: 'bg-gradient-to-br from-indigo-400 to-indigo-600', likes: 321, comments: 18 },
 ]
 
 export default function InstagramFeed() {
   return (
-    <section className="py-20 bg-gradient-to-b from-white to-rose-50">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 mb-4">
-            <Instagram className="w-6 h-6 text-rose-500" />
-            <h2 className="font-display text-3xl md:text-4xl font-bold text-gray-900">
-              Follow Us on Instagram
-            </h2>
+    <section className="section-padding relative overflow-hidden bg-white">
+      <div className="container-premium mx-auto px-6">
+        {/* Section Header */}
+        <div className="text-center mb-16 reveal">
+          <div className="inline-flex items-center gap-3 glass-card px-6 py-3 rounded-full mb-6">
+            <Instagram className="w-5 h-5 text-pink" />
+            <span className="text-sm font-semibold text-dark">Follow Our Journey</span>
           </div>
-          <p className="section-subtitle">
-            See our artists' latest work and get inspired for your next look
+          <h2 className="text-section text-dark mb-6">
+            Join Us on <span className="gradient-text">Instagram</span>
+          </h2>
+          <p className="text-xl text-gray-600 max-w-2xl mx-auto mb-6">
+            See our artists' latest work, behind-the-scenes, and get inspired for your next look
           </p>
           <a
             href="https://instagram.com/glowup"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 mt-6 text-rose-600 hover:text-rose-700 font-medium"
+            className="inline-flex items-center gap-3 text-pink hover:text-pink-dark font-semibold text-lg transition-colors group"
           >
             @glowup_beauty
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
             </svg>
           </a>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-          {posts.map((post) => (
+        {/* Instagram Grid */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+          {posts.map((post, index) => (
             <div
               key={post.id}
-              className="group relative aspect-square rounded-2xl overflow-hidden cursor-pointer hover:scale-105 transition-transform duration-300"
+              className="group relative aspect-square rounded-2xl overflow-hidden cursor-pointer hover:scale-105 transition-all duration-500 shadow-soft hover:shadow-medium"
+              style={{ animationDelay: `${index * 100}ms` }}
             >
               <div className={`absolute inset-0 ${post.color}`}></div>
               
               {/* Overlay */}
-              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-colors duration-300 flex items-center justify-center">
-                <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-white text-center">
-                  <div className="flex items-center gap-4 mb-2 justify-center">
-                    <div className="flex items-center gap-1">
-                      <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
-                        <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
-                      </svg>
-                      {post.likes}
+              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/50 transition-all duration-300 flex items-center justify-center">
+                <div className="opacity-0 group-hover:opacity-100 transition-all duration-300 text-white text-center transform translate-y-4 group-hover:translate-y-0">
+                  <div className="flex items-center gap-6 mb-3 justify-center">
+                    <div className="flex items-center gap-2">
+                      <Heart className="w-6 h-6 fill-current" />
+                      <span className="font-bold text-lg">{post.likes}</span>
                     </div>
-                    <div className="flex items-center gap-1">
-                      <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
-                        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
-                      </svg>
-                      {post.comments}
+                    <div className="flex items-center gap-2">
+                      <MessageCircle className="w-6 h-6 fill-current" />
+                      <span className="font-bold text-lg">{post.comments}</span>
                     </div>
                   </div>
+                  <p className="text-sm font-medium">View on Instagram</p>
                 </div>
               </div>
 
-              {/* Placeholder Icon */}
+              {/* Instagram Icon */}
               <div className="absolute inset-0 flex items-center justify-center">
-                <Instagram className="w-12 h-12 text-white/50" />
+                <Instagram className="w-12 h-12 text-white/40 group-hover:scale-125 transition-transform duration-300" />
               </div>
             </div>
           ))}

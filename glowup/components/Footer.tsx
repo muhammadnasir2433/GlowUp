@@ -1,91 +1,129 @@
 import Link from 'next/link'
-import { Sparkles, Mail, Phone, MapPin, Facebook, Instagram, Twitter, MessageCircle } from 'lucide-react'
+import { Sparkles, Mail, Phone, MapPin, Facebook, Instagram, Twitter, MessageCircle, ArrowRight } from 'lucide-react'
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-900 text-white">
-      <div className="container mx-auto px-4 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+    <footer className="relative bg-gradient-dark text-white overflow-hidden">
+      {/* Gradient Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-t from-purple-900/20 to-transparent"></div>
+      
+      <div className="container-premium mx-auto px-6 py-20 relative z-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           {/* Brand */}
-          <div>
-            <Link href="/" className="flex items-center gap-2 mb-4">
-              <Sparkles className="w-8 h-8 text-rose-400" />
-              <span className="font-display text-2xl font-bold">GlowUp</span>
+          <div className="lg:col-span-1">
+            <Link href="/" className="flex items-center gap-3 mb-6 group">
+              <div className="w-14 h-14 bg-gradient-primary rounded-2xl flex items-center justify-center shadow-glow group-hover:animate-pulse-glow transition-all">
+                <Sparkles className="w-7 h-7 text-white" />
+              </div>
+              <span className="font-display text-3xl font-extrabold gradient-text">GlowUp</span>
             </Link>
-            <p className="text-gray-400 mb-4">
-              Your Personal Beauty Artist at Home. We bring the salon experience to your doorstep.
+            <p className="text-gray-300 mb-6 leading-relaxed">
+              Your Personal Beauty Artist at Home. We bring the premium salon experience to your doorstep.
             </p>
             <div className="flex gap-4">
-              <a href="#" className="text-gray-400 hover:text-rose-400 transition-colors">
-                <Facebook className="w-5 h-5" />
-              </a>
-              <a href="#" className="text-gray-400 hover:text-rose-400 transition-colors">
-                <Instagram className="w-5 h-5" />
-              </a>
-              <a href="#" className="text-gray-400 hover:text-rose-400 transition-colors">
-                <Twitter className="w-5 h-5" />
-              </a>
+              {[
+                { icon: Facebook, href: '#' },
+                { icon: Instagram, href: '#' },
+                { icon: Twitter, href: '#' },
+              ].map(({ icon: Icon, href }) => (
+                <a 
+                  key={href}
+                  href={href} 
+                  className="w-12 h-12 glass rounded-xl flex items-center justify-center hover:bg-gradient-primary transition-all duration-300 hover:scale-110 hover:shadow-glow"
+                >
+                  <Icon className="w-5 h-5" />
+                </a>
+              ))}
             </div>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h3 className="font-semibold text-lg mb-4">Quick Links</h3>
-            <ul className="space-y-2">
-              <li><Link href="/" className="text-gray-400 hover:text-white transition-colors">Home</Link></li>
-              <li><Link href="/artists" className="text-gray-400 hover:text-white transition-colors">Find Artists</Link></li>
-              <li><Link href="/services" className="text-gray-400 hover:text-white transition-colors">Services</Link></li>
-              <li><Link href="/blog" className="text-gray-400 hover:text-white transition-colors">Blog & Tips</Link></li>
-              <li><Link href="/artist/register" className="text-gray-400 hover:text-white transition-colors">Join as Artist</Link></li>
+            <h3 className="font-display text-xl font-bold mb-6 gradient-text">Quick Links</h3>
+            <ul className="space-y-4">
+              {[
+                { label: 'Home', href: '/' },
+                { label: 'Find Artists', href: '/artists' },
+                { label: 'Services', href: '/services' },
+                { label: 'Blog & Tips', href: '/blog' },
+                { label: 'Join as Artist', href: '/artist/register' },
+              ].map(({ label, href }) => (
+                <li key={label}>
+                  <Link href={href} className="text-gray-300 hover:text-pink-light transition-all flex items-center gap-2 group">
+                    <ArrowRight className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity" />
+                    <span className="group-hover:translate-x-1 transition-transform">{label}</span>
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
           {/* Services */}
           <div>
-            <h3 className="font-semibold text-lg mb-4">Services</h3>
-            <ul className="space-y-2">
-              <li><Link href="/services/bridal" className="text-gray-400 hover:text-white transition-colors">Bridal Makeup</Link></li>
-              <li><Link href="/services/party" className="text-gray-400 hover:text-white transition-colors">Party Makeup</Link></li>
-              <li><Link href="/services/casual" className="text-gray-400 hover:text-white transition-colors">Casual Makeup</Link></li>
-              <li><Link href="/services/mehndi" className="text-gray-400 hover:text-white transition-colors">Mehndi</Link></li>
-              <li><Link href="/services/hair" className="text-gray-400 hover:text-white transition-colors">Hair Styling</Link></li>
-              <li><Link href="/services/skincare" className="text-gray-400 hover:text-white transition-colors">Skincare</Link></li>
+            <h3 className="font-display text-xl font-bold mb-6 gradient-text-gold">Services</h3>
+            <ul className="space-y-4">
+              {[
+                'Bridal Makeup',
+                'Party Makeup',
+                'Casual Makeup',
+                'Mehndi',
+                'Hair Styling',
+                'Skincare',
+              ].map((service) => (
+                <li key={service}>
+                  <Link href="/services" className="text-gray-300 hover:text-gold transition-colors flex items-center gap-2 group">
+                    <span className="w-1.5 h-1.5 bg-gold rounded-full group-hover:scale-150 transition-transform"></span>
+                    {service}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
           {/* Contact */}
           <div>
-            <h3 className="font-semibold text-lg mb-4">Contact Us</h3>
-            <ul className="space-y-3">
-              <li className="flex items-start gap-2 text-gray-400">
-                <MapPin className="w-5 h-5 mt-0.5 flex-shrink-0" />
+            <h3 className="font-display text-xl font-bold mb-6 gradient-text-secondary">Contact Us</h3>
+            <ul className="space-y-4">
+              <li className="flex items-start gap-3 text-gray-300">
+                <MapPin className="w-5 h-5 mt-1 flex-shrink-0 text-pink" />
                 <span>123 Beauty Avenue, Karachi, Pakistan</span>
               </li>
-              <li className="flex items-center gap-2 text-gray-400">
-                <Phone className="w-5 h-5 flex-shrink-0" />
-                <a href="tel:+923001234567" className="hover:text-white transition-colors">+92 300 1234567</a>
+              <li className="flex items-center gap-3 text-gray-300">
+                <Phone className="w-5 h-5 flex-shrink-0 text-pink" />
+                <a href="tel:+923001234567" className="hover:text-pink-light transition-colors">+92 300 1234567</a>
               </li>
-              <li className="flex items-center gap-2 text-gray-400">
-                <Mail className="w-5 h-5 flex-shrink-0" />
-                <a href="mailto:hello@glowup.pk" className="hover:text-white transition-colors">hello@glowup.pk</a>
+              <li className="flex items-center gap-3 text-gray-300">
+                <Mail className="w-5 h-5 flex-shrink-0 text-pink" />
+                <a href="mailto:hello@glowup.pk" className="hover:text-pink-light transition-colors">hello@glowup.pk</a>
               </li>
-              <li>
+              <li className="pt-4">
                 <a 
                   href="https://wa.me/923001234567" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-full transition-colors mt-2"
+                  className="inline-flex items-center gap-3 bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-xl transition-all hover:scale-105 hover:shadow-lg"
                 >
                   <MessageCircle className="w-5 h-5" />
-                  Chat on WhatsApp
+                  <span className="font-semibold">Chat on WhatsApp</span>
                 </a>
               </li>
             </ul>
           </div>
         </div>
 
-        <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-          <p>&copy; {new Date().getFullYear()} GlowUp. All rights reserved. | Made with 💖 in Pakistan</p>
+        {/* Bottom Bar */}
+        <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+          <p className="text-gray-400 text-center md:text-left">
+            &copy; {new Date().getFullYear()} GlowUp. All rights reserved.
+          </p>
+          <div className="flex gap-6 text-sm text-gray-400">
+            <Link href="/privacy" className="hover:text-pink-light transition-colors">Privacy Policy</Link>
+            <Link href="/terms" className="hover:text-pink-light transition-colors">Terms of Service</Link>
+            <Link href="/cookies" className="hover:text-pink-light transition-colors">Cookies</Link>
+          </div>
+          <p className="text-gray-400 text-center md:text-right">
+            Made with <span className="text-pink">💖</span> in Pakistan
+          </p>
         </div>
       </div>
     </footer>

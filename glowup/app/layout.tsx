@@ -4,14 +4,20 @@ import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 
 export const metadata: Metadata = {
-  title: 'GlowUp – Home Beauty Services | Your Personal Beauty Artist at Home',
-  description: 'Connect with nearby makeup and beauty artists for home services. Bridal makeup, party makeup, casual makeup, mehndi, hair styling, and skincare services at your doorstep.',
-  keywords: 'beauty services, home makeup artist, bridal makeup, party makeup, mehndi, hair styling, skincare, beauty salon at home',
+  title: 'GlowUp – Home Beauty Services | Book Verified Makeup Artists',
+  description: 'Connect with nearby verified makeup and beauty artists for home services. Bridal makeup, party makeup, mehndi, hair styling, and skincare at your doorstep.',
+  keywords: 'beauty services, home makeup artist, bridal makeup, party makeup, mehndi, hair styling, skincare, beauty salon at home, GlowUp',
   authors: [{ name: 'GlowUp' }],
   openGraph: {
     title: 'GlowUp – Home Beauty Services',
     description: 'Your Personal Beauty Artist at Home',
     type: 'website',
+    images: ['/og-image.jpg'],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'GlowUp – Home Beauty Services',
+    description: 'Book verified beauty artists at your doorstep',
   },
 }
 
@@ -22,7 +28,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="font-sans antialiased">
+      <body className="font-sans antialiased bg-white text-dark overflow-x-hidden">
         <Header />
         <main className="min-h-screen">
           {children}
