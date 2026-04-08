@@ -1,6 +1,24 @@
-# GlowUp – Home Beauty Services
+# GlowUp – Home Beauty Services ✨
 
-A modern, responsive website for a home beauty service marketplace that connects customers with nearby makeup and beauty artists for home services.
+> **Your Personal Beauty Artist at Home**
+
+[![Next.js](https://img.shields.io/badge/Next.js-14-black?logo=next.js)](https://nextjs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.4-blue?logo=typescript)](https://www.typescriptlang.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind-3.4-38bdf8?logo=tailwind-css)](https://tailwindcss.com/)
+[![License](https://img.shields.io/badge/License-MIT-green)](LICENSE)
+[![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?logo=vercel)](https://vercel.com)
+
+A modern, responsive website for a home beauty service marketplace that connects customers with nearby makeup and beauty artists for home services. Built with Next.js 14, TypeScript, and Tailwind CSS.
+
+🌐 **Live Demo**: [Visit GlowUp](https://glowup.vercel.app) *(Replace with your actual Vercel URL)*
+
+---
+
+## 📸 Screenshots
+
+*Add screenshots of your website here*
+
+---
 
 ## 🌟 Features
 
@@ -59,27 +77,29 @@ A modern, responsive website for a home beauty service marketplace that connects
 ## 🚀 Getting Started
 
 ### Prerequisites
-- Node.js 18+ 
-- npm or yarn
+- Node.js 18+ ([Download](https://nodejs.org/))
+- npm or yarn package manager
+- Git for version control
 
 ### Installation
 
-1. Clone the repository or navigate to the project:
+1. **Clone the repository:**
 ```bash
-cd glowup
+git clone https://github.com/muhammadnasir2433/GlowUp.git
+cd GlowUp/glowup
 ```
 
-2. Install dependencies:
+2. **Install dependencies:**
 ```bash
 npm install
 ```
 
-3. Run the development server:
+3. **Run the development server:**
 ```bash
 npm run dev
 ```
 
-4. Open [http://localhost:3000](http://localhost:3000) in your browser
+4. **Open your browser** and navigate to [http://localhost:3000](http://localhost:3000)
 
 ### Build for Production
 
@@ -87,6 +107,25 @@ npm run dev
 npm run build
 npm start
 ```
+
+## 🌐 Deployment
+
+### Deploy on Vercel (Recommended)
+
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new).
+
+1. Push your code to GitHub
+2. Go to [Vercel](https://vercel.com/new) and import your GitHub repository
+3. Vercel will auto-detect Next.js and configure settings
+4. Click **Deploy**
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/muhammadnasir2433/GlowUp)
+
+### Deploy on Other Platforms
+
+- **Netlify**: Supports Next.js static exports
+- **AWS Amplify**: Full-stack deployment option
+- **Railway**: Easy Next.js hosting
 
 ## 📁 Project Structure
 
@@ -234,23 +273,62 @@ artist_availability (id, artist_id, day_of_week, start_time, end_time, is_availa
 
 ## 🤝 Contributing
 
-Contributions are welcome! Please feel free to submit a Pull Request.
+We love contributions! Here's how you can help:
+
+1. **Fork the Project**
+2. **Create your Feature Branch** (`git checkout -b feature/AmazingFeature`)
+3. **Commit your Changes** (`git commit -m 'Add some AmazingFeature'`)
+4. **Push to the Branch** (`git push origin feature/AmazingFeature`)
+5. **Open a Pull Request**
+
+### Contribution Guidelines
+- Follow the existing code style
+- Write clear commit messages
+- Test your changes before submitting
+- Update documentation if needed
+
+## 👥 Contributors
+
+| Contributor | Role |
+|------------|------|
+| Muhammad Nasir | Full Stack Developer |
+
+*Want to contribute? Join our team!*
 
 ## 📄 License
 
-This project is proprietary and confidential.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 📞 Support
+## 📞 Support & Contact
 
-For support, email hello@glowup.pk or contact us on WhatsApp: +92 300 1234567
+We're here to help! Reach out to us:
+
+- 📧 **Email**: hello@glowup.pk
+- 📱 **WhatsApp**: [+92 300 1234567](https://wa.me/923001234567)
+- 🐛 **Report Bugs**: [GitHub Issues](https://github.com/muhammadnasir2433/GlowUp/issues)
+- 💡 **Feature Requests**: [GitHub Discussions](https://github.com/muhammadnasir2433/GlowUp/discussions)
 
 ## 🙏 Acknowledgments
 
 - Design inspired by modern beauty industry trends
-- Built with love for the Pakistani market
-- Icons from Lucide React
-- Fonts from Google Fonts
+- Built with love for the Pakistani market 🇵🇰
+- Icons from [Lucide React](https://lucide.dev/)
+- Fonts from [Google Fonts](https://fonts.google.com/)
+- Deployed on [Vercel](https://vercel.com)
+
+## 📈 Project Stats
+
+![GitHub stars](https://img.shields.io/github/stars/muhammadnasir2433/GlowUp?style=social)
+![GitHub forks](https://img.shields.io/github/forks/muhammadnasir2433/GlowUp?style=social)
+![GitHub issues](https://img.shields.io/github/issues/muhammadnasir2433/GlowUp)
+![GitHub pull requests](https://img.shields.io/github/issues-pr/muhammadnasir2433/GlowUp)
 
 ---
 
-**Made with 💖 in Pakistan**
+<div align="center">
+
+**Made with 💖 in Pakistan** ⭐ Don't forget to star this repository!
+
+[Website](https://glowup.vercel.app) • [Report Bug](https://github.com/muhammadnasir2433/GlowUp/issues) • [Request Feature](https://github.com/muhammadnasir2433/GlowUp/issues)
+
+</div>
